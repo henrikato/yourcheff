@@ -1,0 +1,36 @@
+{
+  "name": "yourcheff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js",
+    "test": "mocha --recursive tests --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrikato/yourcheff.git"
+  },
+  "author": "Henrique T. Kato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henrikato/yourcheff/issues"
+  },
+  "homepage": "https://github.com/henrikato/yourcheff#readme",
+  "dependencies": {
+    "async": "^3.1.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.11",
+    "request": "^2.88.0",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-node8": "^1.2.0",
+    "nodemon": "^1.19.4",
+    "mocha": "^6.2.2"
+  }
+}

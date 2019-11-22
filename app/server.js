@@ -20,6 +20,7 @@ connect("mongodb+srv://henrikato:Mongo2019@cluster0-3pncu.mongodb.net/test?retry
 app.use(urlencoded({ extended: true })).use(json());
 app.use(express.static(staticDir));
 
+app.use('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
 app.use('/api', Usuario);
 app.use('/api', Autorizacao, [ Estabelecimento, Produto, Comanda, Cardapio ])
 

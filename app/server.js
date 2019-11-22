@@ -12,15 +12,15 @@ import Cardapio from './routes/cardapioRoute';
 import { Autorizacao } from './services/authService';
 
 const app = express();
-const staticDir =  path.join(__dirname, "assets");
 
 // connect("mongodb://localhost:32769/yourcheff", { useNewUrlParser: true });
 connect("mongodb+srv://henrikato:Mongo2019@cluster0-3pncu.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 app.use(urlencoded({ extended: true })).use(json());
-app.use(express.static(staticDir));
+app.use('/assets', express.static(path.join(__dirname, "/assets")));
+app.use(express.static(path.join(__dirname, "/public")));
 
-app.use('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')));
+
 app.use('/api', Usuario);
 app.use('/api', Autorizacao, [ Estabelecimento, Produto, Comanda, Cardapio ])
 

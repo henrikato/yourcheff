@@ -1,0 +1,14 @@
+.header {
+    margin: 2em 0;
+    font-size: 30pt;
+    font-weight: bold;
+    color: #F44336;
+    font-family: 'Montserrat', sans-serif;
+    
+    & * {
+        line-height: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16pt;
+        color: #000;
+    }
+}

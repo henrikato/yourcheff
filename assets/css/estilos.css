@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900&display=swap");
+.header {
+  margin: 2em 0;
+  font-size: 30pt;
+  font-weight: bold;
+  color: #F44336;
+  font-family: "Montserrat", sans-serif;
+}
+.header * {
+  line-height: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16pt;
+  color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #EFEFEF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 80px;
+  box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.3);
+}
+.navbar .navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px;
+}
+.navbar .navbar-wrapper .chapeu {
+  height: 60px;
+}
+.navbar .navbar-wrapper .logo {
+  height: 60px;
+}
+.navbar .navbar-wrapper a {
+  text-decoration: none;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12pt;
+  font-weight: 500;
+  transition: all ease 0.2s;
+}
+.navbar .navbar-wrapper a:hover {
+  color: #F10E10;
+}
+.navbar .navbar-wrapper ul {
+  display: inline-flex;
+  list-style: none;
+}
+.navbar .navbar-wrapper ul li {
+  margin: 0 15px;
+}
+
+.apresentacao {
+  position: relative;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), #FFF 70%);
+  padding: 6em 5em 4em;
+  display: grid;
+  grid-template-columns: 50% 20% 20%;
+  grid-template-areas: "texto void exemplo";
+  align-items: center;
+}
+.apresentacao .bg-apresentacao {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/632065.jpg");
+}
+.apresentacao .texto {
+  grid-area: texto;
+}
+.apresentacao .texto > h1 {
+  font-size: 30pt;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.apresentacao .exemplo {
+  grid-area: exemplo;
+}
+.apresentacao .exemplo > img {
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 10px 30px 60px -5px rgba(0, 0, 0, 0.2), 5px 5px 20px -5px rgba(0, 0, 0, 0.2);
+  transform: rotate(5deg);
+}
+
+.detalhes {
+  background: #FFF;
+}
+.detalhes .destaques, .detalhes .como-usar, .detalhes .duvidas, .detalhes .download, .detalhes .contato {
+  padding: 4em;
+}
+.detalhes .destaques {
+  display: grid;
+  grid-gap: 50px;
+}
+.detalhes .destaques .destaque {
+  margin: 0 10em;
+  display: inline-grid;
+  grid-template: "img texto"/190px auto;
+  align-items: center;
+}
+.detalhes .destaques .destaque > .imagem {
+  grid-area: img;
+  border-radius: 100px;
+}
+.detalhes .destaques .destaque .titulo {
+  grid-area: texto;
+  color: #F10E10;
+}
+.detalhes .destaques .destaque .descricao {
+  grid-area: texto;
+}
+.detalhes .como-usar .etapas {
+  display: grid;
+  grid-template: "primeiro segundo terceiro"/auto 20% auto;
+}
+.detalhes .como-usar .etapas .etapa {
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+}
+.detalhes .como-usar .etapas .etapa > img {
+  grid-area: img;
+  justify-self: center;
+  border-radius: 50px;
+}
+.detalhes .como-usar .etapas .etapa > p {
+  grid-area: texto;
+}
+.detalhes .como-usar .etapas > .primeiro {
+  grid-area: primeiro;
+  display: inline-grid;
+  align-items: center;
+}
+.detalhes .como-usar .etapas > .primeiro > .etapa {
+  grid-template: "texto img"/auto 70px;
+}
+.detalhes .como-usar .etapas > .primeiro > .etapa > p {
+  text-align: right;
+}
+.detalhes .como-usar .etapas > .segundo {
+  grid-area: segundo;
+  display: inline-grid;
+  align-items: center;
+}
+.detalhes .como-usar .etapas > .segundo > img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.3);
+}
+.detalhes .como-usar .etapas > .terceiro {
+  grid-area: terceiro;
+  display: inline-grid;
+  align-items: center;
+}
+.detalhes .como-usar .etapas > .terceiro > .etapa {
+  grid-template: "img texto"/70px auto;
+}
+.detalhes .como-usar .etapas > .terceiro > .etapa > p {
+  text-align: left;
+}
+.detalhes .duvidas {
+  display: grid;
+  grid-template: "header header" "esquerda direita" "esquerda direita"/50% 50%;
+  grid-gap: 2em;
+}
+.detalhes .duvidas .header {
+  grid-area: header;
+}
+.detalhes .duvidas .duvida :nth-child(even) {
+  grid-area: direita;
+}
+.detalhes .duvidas .duvida :nth-child(odd) {
+  grid-area: esquerda;
+}
+.detalhes .download {
+  position: relative;
+  display: grid;
+  grid-template: "header header" "android apple"/50% 50%;
+  grid-gap: 2em;
+  align-items: center;
+}
+.detalhes .download .header {
+  grid-area: header;
+}
+.detalhes .download .android {
+  grid-area: android;
+  justify-self: flex-end;
+}
+.detalhes .download .android > img {
+  width: 250px;
+}
+.detalhes .download .apple {
+  grid-area: apple;
+  justify-self: flex-start;
+}
+.detalhes .download .apple > img {
+  width: 200px;
+}
+.detalhes .download .soon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(rgba(244, 67, 54, 0.6), rgba(244, 67, 54, 0.9));
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.detalhes .download .soon h1 {
+  font-size: 120pt;
+  transform: rotate(-5deg);
+  color: #FFF;
+}
+.detalhes .contato {
+  display: grid;
+  grid-template: "header header" "form form" "rs0 rs0" "rs1 rs2"/50% 50%;
+  justify-content: center;
+  align-items: center;
+}
+.detalhes .contato .header {
+  grid-area: header;
+}
+.detalhes .contato form {
+  grid-area: form;
+  justify-self: center;
+}
+.detalhes .contato form .form-group {
+  margin: 1em 0;
+}
+.detalhes .contato form .form-group label {
+  color: #F10E10;
+  margin-bottom: 0.5em;
+}
+.detalhes .contato form .form-group input {
+  width: 15em;
+  font-size: 16pt;
+  border: none;
+  border-bottom: 2px solid #F10E10;
+  padding: 4px 8px;
+}
+.detalhes .contato form .form-group button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #EFEFEF;
+  width: 100%;
+  padding: 8px 20px;
+  font-size: 14pt;
+  box-shadow: 0 2px 10px -4px rgba(0, 0, 0, 0.5);
+  transition: all ease 0.2s;
+}
+.detalhes .contato form .form-group button:hover {
+  background: #F10E10;
+  color: #FFFFFF;
+}
+.detalhes .contato .rs0 {
+  margin: 2em 2em 1em;
+  grid-area: rs0;
+  justify-self: center;
+}
+.detalhes .contato .rs1, .detalhes .contato .rs2 {
+  font-size: 40pt;
+  color: #F10E10;
+  opacity: 0.7;
+  transition: all ease 0.2s;
+}
+.detalhes .contato .rs1 > i, .detalhes .contato .rs2 > i {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.detalhes .contato .rs1:hover, .detalhes .contato .rs2:hover {
+  opacity: 1;
+}
+.detalhes .contato .rs1 {
+  grid-area: rs1;
+  justify-self: flex-end;
+}
+.detalhes .contato .rs2 {
+  grid-area: rs2;
+  justify-self: flex-start;
+}
+.detalhes .footer {
+  background: #FFFFFF;
+  color: #F10E10;
+  padding: 4em;
+}
+.detalhes .footer .logo {
+  display: grid;
+  grid-template: "chapeu texto"/150px 100px;
+}
+.detalhes .footer .logo .chapeu {
+  grid-area: chapeu;
+  width: 100%;
+  align-self: center;
+}
+.detalhes .footer .logo .texto {
+  grid-area: texto;
+  width: 200%;
+  align-self: center;
+}
+.detalhes .footer h3 {
+  margin: 2em 0;
+  font-size: 20pt;
+}
+
+/*# sourceMappingURL=estilos.css.map */

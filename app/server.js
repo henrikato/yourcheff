@@ -12,7 +12,7 @@ import Cardapio from './routes/cardapioRoute';
 import { Autorizacao } from './services/authService';
 
 const app = express();
-const staticDir =  path.join(__dirname, "app/assets");
+const staticDir =  path.join(__dirname, "assets");
 
 // connect("mongodb://localhost:32769/yourcheff", { useNewUrlParser: true });
 connect("mongodb+srv://henrikato:Mongo2019@cluster0-3pncu.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });

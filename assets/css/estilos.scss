@@ -55,6 +55,7 @@ html {
         }
         
         & ul {
+            grid-area: menu;
             display: inline-flex;
             list-style: none;
             
@@ -70,7 +71,7 @@ html {
     background: linear-gradient(rgba(255, 255, 255, .5), #FFF 70%);
     padding: 6em 5em 4em;
     display: grid;
-    grid-template-columns: 50% 20% 20%;
+    grid-template-columns: 50% auto 30%;
     grid-template-areas: 'texto void exemplo';
     align-items: center;
     
@@ -156,8 +157,12 @@ html {
                     border-radius: 50px;
                 }
                 
+                & > h2 {
+                    grid-area: titulo;
+                }
+                
                 & > p {
-                    grid-area: texto;
+                    grid-area: descricao;
                 }
             }
             
@@ -167,7 +172,16 @@ html {
                 align-items: center;
                 
                 & > .etapa {
-                    grid-template: 'texto img' / auto 70px;
+                    grid-template: 
+                        'titulo img' 
+                        'descricao img' 
+                        / auto 70px;
+                    align-items: center;
+                    
+                    & > h2 {
+                        text-align: end;
+                    }
+                    
                     & > p {
                         text-align: right;
                     }
@@ -192,7 +206,12 @@ html {
                 align-items: center;
                 
                 & > .etapa {
-                    grid-template: 'img texto' / 70px auto;
+                    grid-template: 
+                        'img titulo' 
+                        'img descricao' 
+                        / 70px auto;
+                    align-items: center;
+                    justify-content: flex-start;
                     & > p {
                         text-align: left;
                     }

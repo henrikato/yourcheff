@@ -8,7 +8,8 @@ const router = Router();
 router.post('/login', usuarioController.Login);
 router.post('/valida', usuarioController.Valida);
 
-router.route('/usuario').post(usuarioController.Post).get(usuarioController.Get)
+router.route('/usuario').post(usuarioController.Post)
+router.get('/usuario', Autorizacao, usuarioController.Get)
 router.get('/usuario/:id', Autorizacao, usuarioController.GetById)
 router.put('/usuario/:id', Autorizacao, usuarioController.Put)
 router.delete('/usuario/:id', Autorizacao, usuarioController.Delete)

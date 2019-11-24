@@ -44,7 +44,7 @@ export default class EntidadeBaseController {
                 if(!existe) return res.status(422).json(GerarErro("Registro não encontrado"));
 
                 await servico.Put(id, req.body);
-                var retorno = servico.GetById(id);
+                var retorno = await servico.GetById(id);
                 res.status(200).json(retorno);
             } catch (error) {
                 res.status(422).json(ParseErro(error));

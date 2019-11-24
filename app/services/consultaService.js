@@ -1,3 +1,5 @@
+import { Types } from "mongoose";
+
 export default class ServicoConsulta {
     constructor(model) {
         this.Get = async (query, fields) => await model.find(query, fields);
@@ -10,7 +12,7 @@ export default class ServicoConsulta {
             return entidade;
         };
 
-        this.Put = async (id, data) => await model.findByIdAndUpdate(id, { $set: data });
+        this.Put = async (id, data) => await model.updateOne({ _id: Types.ObjectId(id) }, { $set: data });
 
         this.Delete = async (id) => await model.findByIdAndDelete(id);
     }

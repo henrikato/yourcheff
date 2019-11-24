@@ -14,7 +14,10 @@ import { Autorizacao } from './services/authService';
 const app = express();
 
 // connect("mongodb://localhost:32769/yourcheff", { useNewUrlParser: true });
-connect("mongodb+srv://henrikato:Mongo2019@cluster0-3pncu.mongodb.net/yourcheff?retryWrites=true&w=majority", { useNewUrlParser: true });
+connect("mongodb+srv://henrikato:Mongo2019@cluster0-3pncu.mongodb.net/yourcheff?retryWrites=true&w=majority", { 
+    useNewUrlParser: true,
+    useFindAndModify: false
+});
 
 app.use(urlencoded({ extended: true })).use(json());
 app.use('/assets', express.static(path.join(__dirname, "/assets")));

@@ -40,11 +40,10 @@ export default class EntidadeBaseController {
                 var id = req.params.id;
                 if(!id) return res.status(422).json(GerarErro("Favor informar o ID"))
 
-                var existe = await servico.Get(id);
+                var existe = await servico.GetById(id);
                 if(!existe) return res.status(422).json(GerarErro("Registro não encontrado"));
 
-                var atualizado = Object.assign({}, existe, req.body);
-                var retorno = await servico.Put(id, atualizado);
+                var retorno = await servico.Put(id, req.body);
                 res.status(200).json(retorno);
             } catch (error) {
                 res.status(422).json(ParseErro(error));

@@ -6,7 +6,7 @@ export default class EntidadeBaseController {
             try {
                 let { fields, ...query } = req.query;
                 var retorno = await servico.Get(query, fields);
-                res.status(200).json(retorno)
+                res.status(200).json({ retorno, __count: retorno.length })
             } catch (error) {
                 res.status(422).json(ParseErro(error));
             }

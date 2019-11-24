@@ -1,0 +1,11 @@
+{
+    "apps": [
+        {
+            "name": "API YourCheff",
+            "script": "/home/ubuntu/yourcheff/index.js",
+            "args": "--port 8080",
+            "exec_mode": "fork_mode",
+            "max_restarts": 10
+        }
+    ]
+}
